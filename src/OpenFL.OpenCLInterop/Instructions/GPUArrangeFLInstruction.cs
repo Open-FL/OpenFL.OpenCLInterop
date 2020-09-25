@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-using OpenCL.Memory;
+using OpenCL.NET.Memory;
 using OpenCL.Wrapper;
 
 using OpenFL.Core.DataObjects.ExecutableDataObjects;
