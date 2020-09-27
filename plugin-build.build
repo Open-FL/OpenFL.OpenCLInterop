@@ -1,4 +1,5 @@
 name: open-fl-cl-interop
 include: .\src\OpenFL.OpenCLInterop\bin\Debug\netstandard2.0\OpenFL.DefaultInstructions.dll
 target: .\src\OpenFL.OpenCLInterop\bin\Debug\netstandard2.0\OpenFL.OpenCLInterop.dll
-#output: .\build\open-fl-cl-interop.zip
+output: .\docs\latest\open-fl-cl-interop.zip
+flags: INFO_TO_OUTPUT
