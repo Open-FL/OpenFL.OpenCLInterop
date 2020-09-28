@@ -10,10 +10,6 @@ namespace OpenFL.OpenCLInterop
     public class CLSerializers : APlugin<SerializableFLProgramSerializer>
     {
 
-        
-
-        public override string Name => "open-fl-cl-serializers";
-
         public override void OnLoad(PluginAssemblyPointer ptr)
         {
             base.OnLoad(ptr);

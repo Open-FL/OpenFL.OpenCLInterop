@@ -10,9 +10,6 @@ namespace OpenFL.OpenCLInterop
 {
     public class CLBufferCreators : APlugin<BufferCreator>
     {
-        
-
-        public override string Name => "open-fl-cl-buffers";
 
         public override void OnLoad(PluginAssemblyPointer ptr)
         {
