@@ -13,8 +13,6 @@ namespace OpenFL.OpenCLInterop
     public class ProgramChecksPlugin : APlugin<FLProgramCheckBuilder>
     {
 
-        public override string Name => "open-fl-random-optimizations";
-
         public override void OnLoad(PluginAssemblyPointer ptr)
         {
             base.OnLoad(ptr);

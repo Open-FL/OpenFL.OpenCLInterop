@@ -11,9 +11,6 @@ namespace OpenFL.OpenCLInterop
     public class CLKernelInstructionPlugin: APlugin<FLInstructionSet>
     {
         
-
-        public override string Name => "open-fl-cl-instructions";
-
         public override void OnLoad(PluginAssemblyPointer ptr)
         {
             base.OnLoad(ptr);
