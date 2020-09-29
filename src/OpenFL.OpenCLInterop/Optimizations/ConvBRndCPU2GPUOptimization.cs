@@ -14,7 +14,9 @@ namespace OpenFL.OpenCLInterop.Optimizations
 {
     public class ConvBRndCPU2GPUOptimization : FLProgramCheck<SerializableFLProgram>
     {
+
         public override int Priority => 2;
+
         public override FLProgramCheckType CheckType => FLProgramCheckType.AggressiveOptimization;
 
         public override object Process(object o)
@@ -60,43 +62,80 @@ namespace OpenFL.OpenCLInterop.Optimizations
             List<SerializableFLInstruction> weavedBufferInitializationCode = new List<SerializableFLInstruction>();
             for (int i = 0; i < rndBuffers.Count; i++)
             {
-                weavedBufferInitializationCode.Add(new SerializableFLInstruction("setactive",
-                    new List<SerializableFLInstructionArgument>
-                    {
-                        new SerializeBufferArgument(rndBuffers[i].Name),
-                        new SerializeDecimalArgument(0),
-                        new SerializeDecimalArgument(1),
-                        new SerializeDecimalArgument(2),
-                        new SerializeDecimalArgument(3)
-                    }));
-                weavedBufferInitializationCode.Add(new SerializableFLInstruction("rnd_gpu",
-                    new List<SerializableFLInstructionArgument>()));
+                weavedBufferInitializationCode.Add(
+                                                   new SerializableFLInstruction(
+                                                                                 "setactive",
+                                                                                 new
+                                                                                 List<SerializableFLInstructionArgument>
+                                                                                 {
+                                                                                     new SerializeBufferArgument(
+                                                                                                                 rndBuffers
+                                                                                                                         [i]
+                                                                                                                     .Name
+                                                                                                                ),
+                                                                                     new SerializeDecimalArgument(0),
+                                                                                     new SerializeDecimalArgument(1),
+                                                                                     new SerializeDecimalArgument(2),
+                                                                                     new SerializeDecimalArgument(3)
+                                                                                 }
+                                                                                )
+                                                  );
+                weavedBufferInitializationCode.Add(
+                                                   new SerializableFLInstruction(
+                                                                                 "rnd_gpu",
+                                                                                 new List<
+                                                                                     SerializableFLInstructionArgument
+                                                                                 >()
+                                                                                )
+                                                  );
             }
 
             for (int i = 0; i < urndBuffers.Count; i++)
             {
-                weavedBufferInitializationCode.Add(new SerializableFLInstruction("setactive",
-                    new List<SerializableFLInstructionArgument>
-                    {
-                        new SerializeBufferArgument(urndBuffers[i].Name),
-                        new SerializeDecimalArgument(0),
-                        new SerializeDecimalArgument(1),
-                        new SerializeDecimalArgument(2),
-                        new SerializeDecimalArgument(3)
-                    }));
-                weavedBufferInitializationCode.Add(new SerializableFLInstruction("urnd_gpu",
-                    new List<SerializableFLInstructionArgument>()));
+                weavedBufferInitializationCode.Add(
+                                                   new SerializableFLInstruction(
+                                                                                 "setactive",
+                                                                                 new
+                                                                                 List<SerializableFLInstructionArgument>
+                                                                                 {
+                                                                                     new SerializeBufferArgument(
+                                                                                                                 urndBuffers
+                                                                                                                         [i]
+                                                                                                                     .Name
+                                                                                                                ),
+                                                                                     new SerializeDecimalArgument(0),
+                                                                                     new SerializeDecimalArgument(1),
+                                                                                     new SerializeDecimalArgument(2),
+                                                                                     new SerializeDecimalArgument(3)
+                                                                                 }
+                                                                                )
+                                                  );
+                weavedBufferInitializationCode.Add(
+                                                   new SerializableFLInstruction(
+                                                                                 "urnd_gpu",
+                                                                                 new List<
+                                                                                     SerializableFLInstructionArgument
+                                                                                 >()
+                                                                                )
+                                                  );
             }
 
-            weavedBufferInitializationCode.Add(new SerializableFLInstruction("setactive",
-                new List<SerializableFLInstructionArgument>
-                {
-                    new SerializeBufferArgument(FLKeywords.InputBufferKey),
-                    new SerializeDecimalArgument(0),
-                    new SerializeDecimalArgument(1),
-                    new SerializeDecimalArgument(2),
-                    new SerializeDecimalArgument(3)
-                }));
+            weavedBufferInitializationCode.Add(
+                                               new SerializableFLInstruction(
+                                                                             "setactive",
+                                                                             new List<SerializableFLInstructionArgument>
+                                                                             {
+                                                                                 new SerializeBufferArgument(
+                                                                                                             FLKeywords
+                                                                                                                 .InputBufferKey
+                                                                                                            ),
+                                                                                 new SerializeDecimalArgument(0),
+                                                                                 new SerializeDecimalArgument(1),
+                                                                                 new SerializeDecimalArgument(2),
+                                                                                 new SerializeDecimalArgument(3)
+                                                                             }
+                                                                            )
+                                              );
 
 
             if (urndBuffers.Count != 0 || rndBuffers.Count != 0)
@@ -105,10 +144,11 @@ namespace OpenFL.OpenCLInterop.Optimizations
                 weavedBufferInitializationCode.ForEach(x => s += "\t" + x + "\n");
                 Logger.Log(LogType.Log, s, 2);
                 input.Functions.First(x => x.Name == FLKeywords.EntryFunctionKey).Instructions
-                    .InsertRange(0, weavedBufferInitializationCode);
+                     .InsertRange(0, weavedBufferInitializationCode);
             }
 
             return input;
         }
+
     }
 }

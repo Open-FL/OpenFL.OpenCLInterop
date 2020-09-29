@@ -1,6 +1,5 @@
 ﻿using OpenFL.OpenCLInterop.Serializers;
 using OpenFL.Serialization.Serializers.Internal;
-using OpenFL.Serialization.Serializers.Internal.BufferSerializer;
 
 using PluginSystem.Core.Pointer;
 using PluginSystem.Utility;

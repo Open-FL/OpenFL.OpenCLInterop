@@ -9,7 +9,9 @@ namespace OpenFL.OpenCLInterop.Optimizations
 {
     public class ConvIArrangeCPU2GPUOptimization : FLProgramCheck<SerializableFLProgram>
     {
+
         public override int Priority => 0;
+
         public override FLProgramCheckType CheckType => FLProgramCheckType.Optimization;
 
         public override object Process(object o)
@@ -18,7 +20,8 @@ namespace OpenFL.OpenCLInterop.Optimizations
             if (!InstructionSet.HasInstruction("gpu_arrange"))
             {
                 throw new InvalidOperationException(
-                    "Can not Convert CPU Arrange instruction when there is no gpu_arrange instruction provided.");
+                                                    "Can not Convert CPU Arrange instruction when there is no gpu_arrange instruction provided."
+                                                   );
             }
 
             foreach (SerializableFLFunction serializableFlFunction in input.Functions)
@@ -29,8 +32,11 @@ namespace OpenFL.OpenCLInterop.Optimizations
                     if (serializableFlInstruction.InstructionKey == "arrange")
                     {
                         serializableFlFunction.Instructions[i] = new SerializableFLInstruction(
-                            "gpu_arrange",
-                            serializableFlFunction.Instructions[i].Arguments);
+                                                                                               "gpu_arrange",
+                                                                                               serializableFlFunction
+                                                                                                   .Instructions[i]
+                                                                                                   .Arguments
+                                                                                              );
                         Logger.Log(LogType.Log, "Weaved: " + serializableFlFunction.Instructions[i], 2);
                     }
                 }
@@ -38,5 +44,6 @@ namespace OpenFL.OpenCLInterop.Optimizations
 
             return input;
         }
+
     }
 }

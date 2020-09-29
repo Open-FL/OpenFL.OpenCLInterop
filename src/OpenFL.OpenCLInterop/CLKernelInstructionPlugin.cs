@@ -8,9 +8,9 @@ using PluginSystem.Utility;
 
 namespace OpenFL.OpenCLInterop
 {
-    public class CLKernelInstructionPlugin: APlugin<FLInstructionSet>
+    public class CLKernelInstructionPlugin : APlugin<FLInstructionSet>
     {
-        
+
         public override void OnLoad(PluginAssemblyPointer ptr)
         {
             base.OnLoad(ptr);

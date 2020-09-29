@@ -23,7 +23,7 @@ namespace OpenFL.OpenCLInterop
             {
                 if (target != ts[i] && target.IsAssignableFrom(ts[i]))
                 {
-                    ASerializableBufferCreator bc = (ASerializableBufferCreator)Activator.CreateInstance(ts[i]);
+                    ASerializableBufferCreator bc = (ASerializableBufferCreator) Activator.CreateInstance(ts[i]);
                     PluginHost.AddBufferCreator(bc);
                 }
             }

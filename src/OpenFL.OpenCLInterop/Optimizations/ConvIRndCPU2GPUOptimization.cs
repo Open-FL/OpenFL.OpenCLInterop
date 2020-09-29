@@ -9,7 +9,9 @@ namespace OpenFL.OpenCLInterop.Optimizations
 {
     public class ConvIRndCPU2GPUOptimization : FLProgramCheck<SerializableFLProgram>
     {
+
         public override int Priority => 0;
+
         public override FLProgramCheckType CheckType => FLProgramCheckType.AggressiveOptimization;
 
         public override object Process(object o)
@@ -27,8 +29,13 @@ namespace OpenFL.OpenCLInterop.Optimizations
                         if (serializableFlInstruction.Arguments.Count == 0)
                         {
                             serializableFlFunction.Instructions[i] = new SerializableFLInstruction(
-                                serializableFlInstruction.InstructionKey + "_gpu",
-                                new List<SerializableFLInstructionArgument>());
+                                                                                                   serializableFlInstruction
+                                                                                                       .InstructionKey +
+                                                                                                   "_gpu",
+                                                                                                   new List<
+                                                                                                       SerializableFLInstructionArgument
+                                                                                                   >()
+                                                                                                  );
                             Logger.Log(LogType.Log, "Weaved: " + serializableFlFunction.Instructions[i], 2);
                         }
                         else
@@ -41,5 +48,6 @@ namespace OpenFL.OpenCLInterop.Optimizations
 
             return input;
         }
+
     }
 }
