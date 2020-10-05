@@ -11,9 +11,9 @@ namespace OpenFL.OpenCLInterop.BufferCreators.Random
         public readonly int Size;
 
         public SerializableUnifiedRandomFLBuffer(string name, FLBufferModifiers modifiers, int size) : base(
-                                                                                                            name,
-                                                                                                            modifiers
-                                                                                                           )
+             name,
+             modifiers
+            )
         {
             Size = size;
         }

@@ -64,29 +64,29 @@ namespace OpenFL.OpenCLInterop.Optimizations
             {
                 weavedBufferInitializationCode.Add(
                                                    new SerializableFLInstruction(
-                                                                                 "setactive",
-                                                                                 new
-                                                                                 List<SerializableFLInstructionArgument>
-                                                                                 {
-                                                                                     new SerializeBufferArgument(
-                                                                                                                 rndBuffers
-                                                                                                                         [i]
-                                                                                                                     .Name
-                                                                                                                ),
-                                                                                     new SerializeDecimalArgument(0),
-                                                                                     new SerializeDecimalArgument(1),
-                                                                                     new SerializeDecimalArgument(2),
-                                                                                     new SerializeDecimalArgument(3)
-                                                                                 }
-                                                                                )
+                                                        "setactive",
+                                                        new
+                                                        List<SerializableFLInstructionArgument>
+                                                        {
+                                                            new SerializeBufferArgument(
+                                                                 rndBuffers
+                                                                         [i]
+                                                                     .Name
+                                                                ),
+                                                            new SerializeDecimalArgument(0),
+                                                            new SerializeDecimalArgument(1),
+                                                            new SerializeDecimalArgument(2),
+                                                            new SerializeDecimalArgument(3)
+                                                        }
+                                                       )
                                                   );
                 weavedBufferInitializationCode.Add(
                                                    new SerializableFLInstruction(
-                                                                                 "rnd_gpu",
-                                                                                 new List<
-                                                                                     SerializableFLInstructionArgument
-                                                                                 >()
-                                                                                )
+                                                        "rnd_gpu",
+                                                        new List<
+                                                            SerializableFLInstructionArgument
+                                                        >()
+                                                       )
                                                   );
             }
 
@@ -94,29 +94,29 @@ namespace OpenFL.OpenCLInterop.Optimizations
             {
                 weavedBufferInitializationCode.Add(
                                                    new SerializableFLInstruction(
-                                                                                 "setactive",
-                                                                                 new
-                                                                                 List<SerializableFLInstructionArgument>
-                                                                                 {
-                                                                                     new SerializeBufferArgument(
-                                                                                                                 urndBuffers
-                                                                                                                         [i]
-                                                                                                                     .Name
-                                                                                                                ),
-                                                                                     new SerializeDecimalArgument(0),
-                                                                                     new SerializeDecimalArgument(1),
-                                                                                     new SerializeDecimalArgument(2),
-                                                                                     new SerializeDecimalArgument(3)
-                                                                                 }
-                                                                                )
+                                                        "setactive",
+                                                        new
+                                                        List<SerializableFLInstructionArgument>
+                                                        {
+                                                            new SerializeBufferArgument(
+                                                                 urndBuffers
+                                                                         [i]
+                                                                     .Name
+                                                                ),
+                                                            new SerializeDecimalArgument(0),
+                                                            new SerializeDecimalArgument(1),
+                                                            new SerializeDecimalArgument(2),
+                                                            new SerializeDecimalArgument(3)
+                                                        }
+                                                       )
                                                   );
                 weavedBufferInitializationCode.Add(
                                                    new SerializableFLInstruction(
-                                                                                 "urnd_gpu",
-                                                                                 new List<
-                                                                                     SerializableFLInstructionArgument
-                                                                                 >()
-                                                                                )
+                                                        "urnd_gpu",
+                                                        new List<
+                                                            SerializableFLInstructionArgument
+                                                        >()
+                                                       )
                                                   );
             }
 
@@ -126,9 +126,9 @@ namespace OpenFL.OpenCLInterop.Optimizations
                                                                              new List<SerializableFLInstructionArgument>
                                                                              {
                                                                                  new SerializeBufferArgument(
-                                                                                                             FLKeywords
-                                                                                                                 .InputBufferKey
-                                                                                                            ),
+                                                                                      FLKeywords
+                                                                                          .InputBufferKey
+                                                                                     ),
                                                                                  new SerializeDecimalArgument(0),
                                                                                  new SerializeDecimalArgument(1),
                                                                                  new SerializeDecimalArgument(2),

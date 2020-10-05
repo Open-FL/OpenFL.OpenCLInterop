@@ -129,11 +129,11 @@ namespace OpenFL.OpenCLInterop.InstructionCreators
                                            KernelList.GetClKernel(instruction.InstructionKey),
                                            instruction.Arguments.Select(
                                                                         x => new FLInstructionArgument(
-                                                                                                       x.GetValue(
-                                                                                                                  script,
-                                                                                                                  func
-                                                                                                                 )
-                                                                                                      )
+                                                                             x.GetValue(
+                                                                                  script,
+                                                                                  func
+                                                                                 )
+                                                                            )
                                                                        ).ToList()
                                           );
         }

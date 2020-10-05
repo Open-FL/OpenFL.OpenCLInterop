@@ -32,11 +32,11 @@ namespace OpenFL.OpenCLInterop.Validators.Optimizations
                     if (serializableFlInstruction.InstructionKey == "arrange")
                     {
                         serializableFlFunction.Instructions[i] = new SerializableFLInstruction(
-                                                                                               "gpu_arrange",
-                                                                                               serializableFlFunction
-                                                                                                   .Instructions[i]
-                                                                                                   .Arguments
-                                                                                              );
+                             "gpu_arrange",
+                             serializableFlFunction
+                                 .Instructions[i]
+                                 .Arguments
+                            );
                         Logger.Log(LogType.Log, "Weaved: " + serializableFlFunction.Instructions[i], 2);
                     }
                 }

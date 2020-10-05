@@ -29,13 +29,13 @@ namespace OpenFL.OpenCLInterop.Optimizations
                         if (serializableFlInstruction.Arguments.Count == 0)
                         {
                             serializableFlFunction.Instructions[i] = new SerializableFLInstruction(
-                                                                                                   serializableFlInstruction
-                                                                                                       .InstructionKey +
-                                                                                                   "_gpu",
-                                                                                                   new List<
-                                                                                                       SerializableFLInstructionArgument
-                                                                                                   >()
-                                                                                                  );
+                                 serializableFlInstruction
+                                     .InstructionKey +
+                                 "_gpu",
+                                 new List<
+                                     SerializableFLInstructionArgument
+                                 >()
+                                );
                             Logger.Log(LogType.Log, "Weaved: " + serializableFlFunction.Instructions[i], 2);
                         }
                         else
