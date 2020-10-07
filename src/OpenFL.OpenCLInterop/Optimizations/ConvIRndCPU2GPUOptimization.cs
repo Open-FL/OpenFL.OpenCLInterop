@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
+using OpenFL.Core.Arguments;
 using OpenFL.Core.DataObjects.SerializableDataObjects;
 using OpenFL.Core.ProgramChecks;
 
@@ -9,6 +11,7 @@ namespace OpenFL.OpenCLInterop.Optimizations
 {
     public class ConvIRndCPU2GPUOptimization : FLProgramCheck<SerializableFLProgram>
     {
+        private static Random seedGenerator = new Random(DateTime.Now.Millisecond);
 
         public override int Priority => 0;
 
@@ -34,7 +37,11 @@ namespace OpenFL.OpenCLInterop.Optimizations
                                  "_gpu",
                                  new List<
                                      SerializableFLInstructionArgument
-                                 >()
+                                 >
+                                 {
+                                     new SerializeDecimalArgument(seedGenerator.Next()),
+                                     new SerializeDecimalArgument(seedGenerator.Next())
+                                 }
                                 );
                             Logger.Log(LogType.Log, "Weaved: " + serializableFlFunction.Instructions[i], 2);
                         }
