@@ -1,1 +1,1 @@
-open-fl-cl-interop|OpenFL.OpenCLInterop.dll|https://open-fl.github.io/OpenFL.OpenCLInterop/latest/info.txt|0.0.1.49|open-fl-default-instructions
+open-fl-cl-interop|OpenFL.OpenCLInterop.dll|https://open-fl.github.io/OpenFL.OpenCLInterop/latest/info.txt|0.0.1.50|open-fl-default-instructions
