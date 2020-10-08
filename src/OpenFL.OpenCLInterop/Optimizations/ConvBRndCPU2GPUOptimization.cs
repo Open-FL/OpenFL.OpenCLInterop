@@ -16,14 +16,15 @@ namespace OpenFL.OpenCLInterop.Optimizations
     public class ConvBRndCPU2GPUOptimization : FLProgramCheck<SerializableFLProgram>
     {
 
-        private static Random seedGenerator = new Random(DateTime.Now.Millisecond);
+        private static readonly Random seedGenerator = new Random(DateTime.Now.Millisecond);
+
         public override int Priority => 2;
 
         public override FLProgramCheckType CheckType => FLProgramCheckType.AggressiveOptimization;
 
         public override object Process(object o)
         {
-            SerializableFLProgram input = (SerializableFLProgram)o;
+            SerializableFLProgram input = (SerializableFLProgram) o;
             List<SerializableRandomFLBuffer> rndBuffers = new List<SerializableRandomFLBuffer>();
             List<SerializableUnifiedRandomFLBuffer> urndBuffers = new List<SerializableUnifiedRandomFLBuffer>();
 
@@ -123,9 +124,9 @@ namespace OpenFL.OpenCLInterop.Optimizations
                                                             SerializableFLInstructionArgument
                                                         >
                                                         {
-                                                             new SerializeDecimalArgument(seedGenerator.Next()),
-                                                             new SerializeDecimalArgument(seedGenerator.Next())
-                                                         }
+                                                            new SerializeDecimalArgument(seedGenerator.Next()),
+                                                            new SerializeDecimalArgument(seedGenerator.Next())
+                                                        }
                                                        )
                                                   );
             }

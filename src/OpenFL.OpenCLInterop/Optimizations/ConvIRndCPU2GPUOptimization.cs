@@ -11,7 +11,8 @@ namespace OpenFL.OpenCLInterop.Optimizations
 {
     public class ConvIRndCPU2GPUOptimization : FLProgramCheck<SerializableFLProgram>
     {
-        private static Random seedGenerator = new Random(DateTime.Now.Millisecond);
+
+        private static readonly Random seedGenerator = new Random(DateTime.Now.Millisecond);
 
         public override int Priority => 0;
 
